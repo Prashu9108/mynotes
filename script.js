@@ -45,3 +45,43 @@ const themeChanger = () => {
 
     }
 }
+
+//To save data
+function saveNote(){
+    var title = document.getElementById("title").value;
+    var note = document.getElementById("content").value;
+    const myNotes = localStorage.getItem('noteData') || '[]'
+
+    const dataArray = JSON.parse(myNotes);
+
+    dataArray.push({title, note});
+
+    //save note to localstorage
+    localStorage.setItem('noteData', JSON.stringify(dataArray));
+    alert('notes has been saved...')
+    
+    dialogOpener();
+    displayNotes();
+}
+
+const displayNotes = () =>{
+    const container = document.getElementById("notes-container");
+    const myNotes = localStorage.getItem('noteData') || '[]' //json format
+    const allNotes = JSON.parse(myNotes) //object format
+    allNotes.forEach(element => {
+        container.innerHTML+= ` 
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+        <div class="notes-card h-100 p-5">
+        <h5 class="text-danger fs-4" >${element.title}</h5>
+        <p class="text-secondary fs-5">${element.note}</p>
+        <div class="icons d-flex align-items-center gap-3">
+        <i class="fa fa-heart"></i>
+        <i class="fa fa-edit"></i>
+        <i class="fa fa-trash"></i>
+        <i class="fa fa-share"></i>
+     </div>
+      </div>
+        </div> ` 
+    });
+}
+displayNotes();
