@@ -74,7 +74,7 @@ const displayNotes = () =>{
         <div class="notes-card h-100 p-5">
         <h5 class="text-danger fs-4" >${element.title}</h5>
         <p class="text-secondary fs-5">${element.note}</p>
-        <div class="icons d-flex align-items-center gap-3">
+        <div class="icons d-flex align-items-center gap-5 ">
         <i class="fa fa-heart"></i>
         <i class="fa fa-edit"></i>
         <i class="fa fa-trash"></i>

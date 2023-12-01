@@ -104,3 +104,12 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
 margin-bottom: 30px;
 border-radius: 10px;
 }
+.icons :hover{
+    color: rgb(164, 1, 1);
+}
+.fa-book:hover{
+    color: rgb(164, 1, 1);
+}
+/* .notes-card:hover{
+    transform: scale(1.1);
+} */
